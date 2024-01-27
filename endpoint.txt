@@ -1,0 +1,52 @@
+Специалист 
+{specialistID,name,start_time,end_time,applicants, tasks}
+
+Соискатель
+{applicantID,name,arrival_time,specialist}
+
+Навык
+{skillID,name}
+
+
+
+Получить всех специалистов, соискателей и навыки
+get /pack 
+
+Создать специалиста 
+post /specialists {specialistID,name,start_time,end_time}
+
+Создать соискателя
+post /applicants {applicantID,name,arrival_time}
+
+Создать навык
+post /skills {skillID,name}
+
+Обновить специалиста
+patch /specialists/:specialistID {name,start_time,end_time}
+
+Обновить соискателя
+patch /applicants/:applicantID {name,arrival_time}
+
+Удалить специалиста
+delete /specialists/:specialistID
+
+Удалить соискателя
+delete /applicants/:applicantID
+
+Удалить навык
+delete /skills/:skillID
+
+Привязать соискателя к специалисту
+patch /bind {applicantID,specialistID}
+
+Добавить навык специалисту
+patch /skills/specialist/ {skillID,specialistID}
+
+Добавить навык соискателю
+patch /skills/applicant/ {skillID,applicantID}
+
+Удалить все навыки специалиста
+delete /skills/specialist/:specialistID 
+
+Удалить все навыки соискателя
+delete /skills/applicant/:applicantID
